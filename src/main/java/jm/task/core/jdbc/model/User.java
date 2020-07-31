@@ -52,11 +52,15 @@ public class User {
         this.lastName = lastName;
     }
 
-    public Byte getAge() {
-        return age;
+    public Byte getAge(byte age) {
+        return this.age;
     }
 
     public void setAge(Byte age) {
         this.age = age;
+    }
+
+    public String toString() {
+        return "id: "+ id + ", name: "+ name +", last name: " + lastName + ", age: "+ age;
     }
 }
