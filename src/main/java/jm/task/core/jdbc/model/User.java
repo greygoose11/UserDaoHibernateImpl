@@ -52,9 +52,9 @@ public class User {
         this.lastName = lastName;
     }
 
-    public Byte getAge(byte age) {
-        return this.age;
-    }
+    //public Byte getAge(byte age) {
+    //    return this.age;
+    //}
 
     public void setAge(Byte age) {
         this.age = age;
@@ -63,4 +63,10 @@ public class User {
     public String toString() {
         return "id: "+ id + ", name: "+ name +", last name: " + lastName + ", age: "+ age;
     }
+
+    public byte getAge() {
+        return this.age;
+    }
+
+
 }
