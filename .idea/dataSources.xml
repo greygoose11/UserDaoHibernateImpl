@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-<<<<<<< HEAD
-    <data-source source="LOCAL" name="my_db_test@localhost" uuid="bcbd1281-236b-4a05-b97f-2f557a37e012">
+    <data-source source="LOCAL" name="postgres@localhost" uuid="8f2312f3-ddac-441a-96e6-1b071043a4e2">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="my_db_test@localhost" uuid="a5c7f316-c351-4910-9378-ebaee8d42c9a">
       <driver-ref>mysql.8</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
@@ -10,19 +15,6 @@
       <driver-properties>
         <property name="serverTimezone" value="UTC" />
       </driver-properties>
-=======
-    <data-source source="LOCAL" name="@localhost" uuid="bcbd1281-236b-4a05-b97f-2f557a37e012">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
->>>>>>> github/master
-    </data-source>
-    <data-source source="LOCAL" name="@localhost [2]" uuid="98bac25c-12d6-4bb5-8171-bdf6f75522cf">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
     </data-source>
   </component>
 </project>
