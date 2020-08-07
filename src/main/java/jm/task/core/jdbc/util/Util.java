@@ -13,7 +13,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-public  class Util {
+public   class Util {
      //реализуйте настройку соеденения с БД
 //    private static final String URL1 = "jdbc:mysql://localhost:3306/my_db_test?serverTimezone=Europe/Moscow&useSSL=false";
 //    private static final String USERNAME = "root";

@@ -17,10 +17,10 @@ public class Main {
         // реализуйте алгоритм здесь
         UserServiceImpl userServiceImpl = new UserServiceImpl() ;
         userServiceImpl.createUsersTable();
-//        userServiceImpl.saveUser("Fedor", "Dostoevskiy", (byte) 88);
-//        userServiceImpl.saveUser("Nikolay", "Nekrasov", (byte) 55);
-//        userServiceImpl.saveUser("Anton", "Chehov", (byte) 45);
-//        System.out.println(userServiceImpl.getAllUsers());
+        userServiceImpl.saveUser("Fedor", "Dostoevskiy", (byte) 88);
+        userServiceImpl.saveUser("Nikolay", "Nekrasov", (byte) 55);
+        userServiceImpl.saveUser("Anton", "Chehov", (byte) 45);
+        System.out.println(userServiceImpl.getAllUsers());
 //        userServiceImpl.cleanUsersTable();
 //        userServiceImpl.dropUsersTable();
         //Util.getSessionFactory();
@@ -29,17 +29,15 @@ public class Main {
 //        UserDaoHibernateImpl userDaoHibernate = new UserDaoHibernateImpl();
 //        userDaoHibernate.createUsersTable();
 //        User user = new User("Anton", "Chehov", (byte) 45);
-        userServiceImpl.saveUser("Anton", "Chehov", (byte) 45);
-        userServiceImpl.saveUser("Fedor", "Dostoevskiy", (byte) 88);
-        userServiceImpl.saveUser("Nikolay", "Nekrasov", (byte) 55);
-        userServiceImpl.removeUserById(3);
-        System.out.println(userServiceImpl.getAllUsers());
+//        userServiceImpl.saveUser("Anton", "Chehov", (byte) 45);
+//        userServiceImpl.saveUser("Fedor", "Dostoevskiy", (byte) 88);
+//        userServiceImpl.saveUser("Nikolay", "Nekrasov", (byte) 55);
+        userServiceImpl.removeUserById(1);
+//        System.out.println(userServiceImpl.getAllUsers());
         userServiceImpl.cleanUsersTable();
 //
 //        userDaoHibernate.saveUser(user);
-
-
-
+//        userServiceImpl.dropUsersTable();
 
     }
 }

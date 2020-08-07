@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table (name = "users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
 
@@ -60,7 +60,7 @@ public class User {
     }
 
     public String toString() {
-        return "id: "+ id + ", name: "+ name +", last name: " + lastName + ", age: "+ age;
+        return "id: "+ id + ", name: "+ name +", last name: " + lastName + ", age: "+ age ;
     }
 
     public byte getAge() {
