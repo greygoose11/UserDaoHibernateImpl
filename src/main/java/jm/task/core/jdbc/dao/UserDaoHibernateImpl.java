@@ -5,6 +5,7 @@ import jm.task.core.jdbc.util.Util;
 import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 //import utils.HibernateSessionFactoryUtil;
 
 import java.sql.SQLException;
@@ -19,11 +20,14 @@ public class UserDaoHibernateImpl implements UserDao {
 
     @Override
     public void createUsersTable() {
+        Util ut = new Util();
         Transaction tx = null;
-        try (Session session = Util.getSessionFactory().openSession())  {
-            tx = session.getTransaction();
-            session.createSQLQuery("CREATE TABLE IF NOT EXISTS user(id int primary key auto_increment, name varchar(40), lastName varchar(40), age int );").executeUpdate();
-                System.out.println("Table is created");
+        try (Session session = ut.getSessionFactory().openSession())  {
+            tx = session.beginTransaction();
+            Query query = session.createSQLQuery("CREATE TABLE IF NOT EXISTS users(id int primary key , name varchar(40), lastName varchar(40), age int );").addEntity(User.class);
+            query.executeUpdate();
+
+            System.out.println("Table is created");
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -35,7 +39,8 @@ public class UserDaoHibernateImpl implements UserDao {
         Transaction tx = null;
         try (Session session = Util.getSessionFactory().openSession())  {
             tx = session.getTransaction();
-            session.createSQLQuery("DROP TABLE IF EXISTS user");
+            Query query = session.createSQLQuery("DROP TABLE IF EXISTS users");
+            query.executeUpdate();
             System.out.println("Table is deleted");
 
         } catch (Exception e) {
@@ -65,7 +70,16 @@ public class UserDaoHibernateImpl implements UserDao {
 
     @Override
     public void removeUserById(long id) {
+        User user = new User();
+        try (Session session = Util.getSessionFactory().openSession()) {
+            Transaction tx = session.beginTransaction();
+            Query query = session.createQuery("delete User where id = :userId");
+            query.setParameter("userId", id);
+            query.executeUpdate();
 
+        } catch (Exception e) {
+            System.out.println("Object was not deleted by id");
+        }
     }
 
     @Override
@@ -83,6 +97,15 @@ public class UserDaoHibernateImpl implements UserDao {
 
     @Override
     public void cleanUsersTable() {
+        try (Session session = Util.getSessionFactory().openSession()) {
+            Transaction tx = session.beginTransaction();
+            Query query = session.createQuery("delete from User");
+//            query.setParameter("userId", id);
+            query.executeUpdate();
+            System.out.println("Table is cleaned");
 
+        } catch (Exception e) {
+            System.out.println("Object was not deleted by id");
+        }
     }
 }

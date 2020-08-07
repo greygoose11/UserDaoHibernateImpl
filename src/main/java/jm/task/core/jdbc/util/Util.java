@@ -13,7 +13,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
-public class Util {
+public  class Util {
      //реализуйте настройку соеденения с БД
 //    private static final String URL1 = "jdbc:mysql://localhost:3306/my_db_test?serverTimezone=Europe/Moscow&useSSL=false";
 //    private static final String USERNAME = "root";
@@ -33,7 +33,7 @@ public class Util {
                 settings.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
                 settings.put(Environment.SHOW_SQL, "true");
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "tread");
-                settings.put(Environment.HBM2DDL_AUTO, "update");
+                settings.put(Environment.HBM2DDL_AUTO, "create-drop");
 
                 configuration.setProperties(settings);
                 configuration.addAnnotatedClass(User.class);

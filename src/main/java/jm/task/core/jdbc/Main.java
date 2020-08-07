@@ -5,6 +5,7 @@ import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserService;
 //import jm.task.core.jdbc.service.UserServiceImpl;
+import jm.task.core.jdbc.service.UserServiceImpl;
 import jm.task.core.jdbc.util.Util;
 
 import java.sql.ResultSet;
@@ -14,8 +15,8 @@ import java.sql.Statement;
 public class Main {
     public static void main(String[] args) {
         // реализуйте алгоритм здесь
-//        UserServiceImpl userServiceImpl = new UserServiceImpl() ;
-//        userServiceImpl.createUsersTable();
+        UserServiceImpl userServiceImpl = new UserServiceImpl() ;
+        userServiceImpl.createUsersTable();
 //        userServiceImpl.saveUser("Fedor", "Dostoevskiy", (byte) 88);
 //        userServiceImpl.saveUser("Nikolay", "Nekrasov", (byte) 55);
 //        userServiceImpl.saveUser("Anton", "Chehov", (byte) 45);
@@ -24,11 +25,16 @@ public class Main {
 //        userServiceImpl.dropUsersTable();
         //Util.getSessionFactory();
 
-        UserDaoHibernateImpl userDaoHibernate = new UserDaoHibernateImpl();
-        userDaoHibernate.createUsersTable();
+
+//        UserDaoHibernateImpl userDaoHibernate = new UserDaoHibernateImpl();
+//        userDaoHibernate.createUsersTable();
 //        User user = new User("Anton", "Chehov", (byte) 45);
-//        userDaoHibernate.saveUser("Anton", "Chehov", (byte) 45);
-        System.out.println(userDaoHibernate.getAllUsers());
+        userServiceImpl.saveUser("Anton", "Chehov", (byte) 45);
+        userServiceImpl.saveUser("Fedor", "Dostoevskiy", (byte) 88);
+        userServiceImpl.saveUser("Nikolay", "Nekrasov", (byte) 55);
+        userServiceImpl.removeUserById(3);
+        System.out.println(userServiceImpl.getAllUsers());
+        userServiceImpl.cleanUsersTable();
 //
 //        userDaoHibernate.saveUser(user);
 
